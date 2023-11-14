@@ -90,6 +90,7 @@ void NeuronNetwork::ForwardFeeder(int LayerNumber, int start, int stop) {
 double NeuronNetwork::ForwardFeed() {
     for (int i = 1; i < layers; i++) {
         LayersCleaner(i, 0, size[i]);
+        ForwardFeeder(i, 0, size[i]);
     }
     double max = 0;
     double prediction = 0;
